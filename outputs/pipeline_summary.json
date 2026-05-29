@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-05-28T22:13:52.802914",
+  "dataset": "MovieLens ml-latest-small",
+  "users": 610,
+  "items": 9724,
+  "ratings": 100836,
+  "profile_quality": {
+    "power_users": 0,
+    "high_users": 105,
+    "medium_users": 473,
+    "low_users": 32,
+    "avg_score": 0.4127
+  },
+  "recommendation": {
+    "collaborative_rmse": 1.7885,
+    "collaborative_mae": 1.4683,
+    "matrix_shape": [
+      610,
+      3650
+    ]
+  },
+  "trust": {
+    "flagged_users": 27,
+    "high_risk_users": 13,
+    "flag_rate_pct": 4.43
+  },
+  "experiment": {
+    "experiment": "Collaborative Filtering vs Content-Based Ranking",
+    "metric": "Mean Absolute Error on held-out ratings (lower is better)",
+    "control": {
+      "name": "Content-Based Ranking",
+      "n": 200,
+      "mean_mae": 0.8384,
+      "std": 0.5591
+    },
+    "treatment": {
+      "name": "Collaborative Filtering (SVD)",
+      "n": 200,
+      "mean_mae": 1.3473,
+      "std": 0.743
+    },
+    "statistics": {
+      "t_statistic": -7.7204,
+      "p_value": 0.0,
+      "effect_size": -0.7218,
+      "significant": true
+    },
+    "result": {
+      "winner": "content-based",
+      "improvement": 60.69,
+      "conclusion": "Statistically significant difference (p=0.0000). Content-Based approach has lower prediction error (deploy)."
+    },
+    "honest_caveats": [
+      "Experiment simulated on historical data \u2014 real A/B test would measure live engagement",
+      "MAE on held-out ratings is a proxy metric \u2014 actual click/engagement rate may differ",
+      "Cold-start users excluded \u2014 results apply only to users with 20+ ratings",
+      "Effect size 0.722 \u2014 practically meaningful"
+    ]
+  },
+  "engagement_predictors": {
+    "genre_count_vs_rating": {
+      "correlation": 0.0355,
+      "p_value": 0.0,
+      "significant": true,
+      "insight": "Genre count has 0.036 correlation with rating (significant)"
+    },
+    "high_vs_low_rater_volume": {
+      "high_rater_avg_ratings": 92.5,
+      "low_rater_avg_ratings": 274.3,
+      "lift": 0.34,
+      "insight": "High-rating users give 93 ratings on average vs 274 for low-rating users \u2014 0.3x more engaged"
+    },
+    "recency_vs_rating": {
+      "correlation": -0.084,
+      "p_value": 0.0,
+      "insight": "Item recency has 0.084 correlation with rating"
+    }
+  }
+}
