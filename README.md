@@ -75,7 +75,6 @@ Running on your real files will produce results similar to:
 
 ```bash
 # 1. Setup
-cd ~/Desktop/Projects/behavioral-signal-engine
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
@@ -91,19 +90,6 @@ python3 main.py --skip-experiment
 
 # 5. Custom data directory
 python3 main.py --data /path/to/movielens/files/
-```
-
----
-
-## Push to GitHub
-
-```bash
-git init
-git add .
-git commit -m "Behavioral Signal Engine user engagement profiling recommendation ranking trust detection MovieLens"
-git remote add origin https://github.com/rajapalagummi/Behavioral-Signal-Engine.git
-git branch -M main
-git push -u origin main
 ```
 
 ---
