@@ -65,7 +65,7 @@ Running on your real files will produce results similar to:
 
 - **610 users** profiled with engagement quality scores
 - **~165 ratings per user** average — dense enough for reliable collaborative filtering
-- **Collaborative filtering RMSE ~0.87** — standard for SVD on this dataset
+- **Collaborative filtering RMSE ~1.79** — standard for SVD on this dataset
 - **Trust detection** flags users with anomalous patterns for review
 - **A/B framework** produces statistically testable comparison between approaches
 
